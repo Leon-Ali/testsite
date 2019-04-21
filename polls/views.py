@@ -47,3 +47,15 @@ class QuestionDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 
+
+class AnswerList(generics.ListCreateAPIView):
+    """Creates the and retrieves Answers"""
+    queryset = Answer.objects.all()
+    serializer_class = AnswerSerializer
+
+
+
+class AnswerDetail(generics.RetrieveUpdateDestroyAPIView):
+    """Retrieves, Updates and Destroys an answer by id"""
+    queryset = Answer.objects.all()
+    serializer_class = AnswerSerializer
