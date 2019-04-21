@@ -8,5 +8,11 @@ class PollsList(generics.ListCreateAPIView):
     serializer_class = PollSerializer
 
 
+class PollDetail(generics.RetrieveUpdateDestroyAPIView):
+    """Retrieve, Update and Destroy a poll by id"""
+    queryset = Poll.objects.all()
+    serializer_class = PollSerializer
+
+
 
 
