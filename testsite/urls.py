@@ -16,10 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import rest_framework
+from rest_framework.schemas import get_schema_view
+from rest_framework_swagger.renderers import SwaggerUIRenderer, OpenAPIRenderer
+
+schema_view = get_schema_view(
+    title='Polls API', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer]
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/', include('polls.urls'))
+    path('api/', include('polls.urls')),
+    path('api/docs/', schema_view, name='docs'),
 
 ]
