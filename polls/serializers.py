@@ -31,7 +31,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        fields = ('id', 'header', 'order', 'group')
+        fields = ('id', 'header', 'order', 'poll', 'group')
 
 
 class AnswerSerializer(serializers.ModelSerializer):
