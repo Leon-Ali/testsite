@@ -27,5 +27,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include('polls.urls')),
     path('api/docs/', schema_view, name='docs'),
+    path('vkauth/', include('vkauth.urls')),
+    path('accounts/', include('allauth.urls')),
 
 ]
